@@ -1,0 +1,43 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body {
+padding-top: 60px;
+}
+.footer {
+padding: 70px 0;
+margin-top: 70px;
+border-top: 1px solid #e5e5e5;
+background-color: #f5f5f5;
+}
+.footer p {
+margin-bottom: 0;
+color: #777;
+}
+.footer-links {
+margin: 10px 0;
+padding: 0;
+}
+.footer-links li {
+display: inline;
+padding: 0 2px;
+}
+.footer-links li:first-child {
+padding-left: 0;
+}
+.console {
+    background-color: #000;
+    height: 500px;
+}
+
+.console iframe {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 500px;
+    width: 100%;
+    color: #2181cf !important;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: rgba(0, 0, 0, 0);
+} 

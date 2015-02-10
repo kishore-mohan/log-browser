@@ -15,7 +15,11 @@ class ServerInfo < ActiveRecord::Base
   end
 
   def set_script
-  	system("locate *.in | tee -a log/#{server_name}.log")     
+  	system("vagrant up| tee -a log/#{server_name}.log")     
+  end
+
+  def system_cmd
+    
   end
 
   def system_quietly(cmd)

@@ -1,9 +1,16 @@
-<%= simple_form_for @server_info do |f| %>
-  <%= f.input :server_name, label: "Name" %>
-  <%= f.input :app_technology, collection: technologies, label: "Technology", prompt: "Selecet Technology"  %>
-  <%= f.input :ide, collection: ide, label: "IDE", prompt: "Selecet IDE"  %>
-  <%= f.input :scm, collection: scm, label: "SCM", prompt: "Selecet SCM"  %>
-  <%= f.input :ci_server, collection: ci_server, label: "CI Server", prompt: "Selecet CI Server"  %>
-  <%= f.input :configuration_management, collection: configuration_management, as: :check_boxes, label: "Configuration Management"  %>
-  <%= f.button :submit, lable: "Create" %>
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+
+    <%= simple_form_for @server_info do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :server_name %>
+    <%= f.input :app_technology, collection: technologies, label: "Technology", prompt: "Selecet Technology"  %>
+    <%= f.input :ide, collection: ide, label: "IDE", prompt: "Selecet IDE"  %>
+    <%= f.input :scm, collection: scm, label: "SCM", prompt: "Selecet SCM"  %>
+    <%= f.input :ci_server, collection: ci_server, label: "CI Server", prompt: "Selecet CI Server"  %>
+    <%= f.input :configuration_management, collection: configuration_management, as: :check_boxes%>
+    <%= f.button :submit, lable: "Create" %>
+    <% end %>
+
+  </div>
+</div>

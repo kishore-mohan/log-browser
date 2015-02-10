@@ -3,8 +3,13 @@ LogBrowser::Application.routes.draw do
 
   root :to => "server_infos#index"
 
+  get "/console_log" => 'server_infos#console_log', as: 'console_log'
+  get "/trigger_script" => 'server_infos#trigger_script', as: 'trigger_script'
+
+
   mount Browserlog::Engine => '/logs'
-  # The priority is based upon order of creation:
+
+ # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

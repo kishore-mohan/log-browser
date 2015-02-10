@@ -1,35 +1,19 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Server Name:</strong>
+  <%= @server_info.server_name %>
+</p>
+<p><strong>
+  Technology
+</strong>
+<%= @server_info.app_technology %></p>
+<p><strong>IDE</strong> <%= @server_info.ide %> </p>
 
 <%= link_to 'Edit', edit_server_info_path(@server_info) %> |
 <%= link_to 'Back', server_infos_path %>
+ </br> </br>
+<%= link_to "Create Server", console_log_path(:id => @server_info.id), :remote => true, class: "btn-success btn-lg"  %>
+ </br> </br>
 
 <div id="console" class="console"></div>
-  <div style="background: #000; color: #2181cf;  font-family: Consolas; font-size: 13px; overflow-x:hidden; padding: 10px;">
-  <script>
-    $('#console').html('<iframe src="/logs/<%= @server_info.server_name %>"></iframe>');
-        function getDocHeight() {
-            var D = document;
-            return Math.max(
-                D.body.scrollHeight, D.documentElement.scrollHeight,
-                D.body.offsetHeight, D.documentElement.offsetHeight,
-                D.body.clientHeight, D.documentElement.clientHeight
-            );
-        }
-     
-        function scrollToBottom () {
-            window.scrollTo(0, document.body.scrollHeight);
-        }
-     
-        window.onload = function() {
-            scrollToBottom();
-        }
-     
-        var scroll = setInterval( function(){ scrollToBottom(); }, 1000);
-     
-        $(function () {
-            clearInterval(scroll);
-        });
-
-  </script>
-  <div>
+  

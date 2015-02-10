@@ -34,4 +34,5 @@ LogBrowser::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.allow_concurrency = true
 end

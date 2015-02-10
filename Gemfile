@@ -7,11 +7,13 @@ gem 'rails', '3.2.19'
 
 gem 'mysql2'
 
+
 group :development do
   gem "binding_of_caller"
   gem "better_errors"
 end
 
+gem 'bootstrap-sass', '~> 3.3.0'
 gem 'multi_logger'
 
 gem 'browserlog', '~> 0.0.2', path: "~/Projects/browserlog"
@@ -30,6 +32,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'thin'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

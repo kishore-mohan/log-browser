@@ -1,0 +1,5 @@
+ $('#console').html('<iframe src="/logs/<%= @server_info.server_name %>"></iframe>');
+
+$.ajax({
+	url: "/trigger_script?id= <%=@server_info.id %>"
+})

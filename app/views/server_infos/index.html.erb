@@ -1,17 +1,17 @@
-<h1>Listing server_infos</h1>
+<h1>Listing Server Infos</h1>
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Server Name</th>
+    
   </tr>
 
 <% @server_infos.each do |server_info| %>
   <tr>
+  <td><%= server_info.server_name %></td>
     <td><%= link_to 'Show', server_info %></td>
-    <td><%= link_to 'Edit', edit_server_info_path(server_info) %></td>
-    <td><%= link_to 'Destroy', server_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to ' | Edit ', edit_server_info_path(server_info) %></td>
+    <td><%= link_to ' | Destroy', server_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

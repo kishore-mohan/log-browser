@@ -3,7 +3,7 @@ module Browserlog
     # before_filter :check_env
     # before_filter :check_auth
 
-    # layout 'browserlog/application'
+    layout 'browserlog/application'
 
     def index      
       @filename = "#{params[:env]}.log"
@@ -21,6 +21,7 @@ module Browserlog
           }
         end
       end
+
     end
 
     private

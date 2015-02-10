@@ -3,7 +3,6 @@ class ServerInfosController < ApplicationController
   # GET /server_infos.json
   def index
     @server_infos = ServerInfo.all
-    # ServerInfo.new.set_script
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,11 +14,31 @@ class ServerInfosController < ApplicationController
   # GET /server_infos/1.json
   def show
     @server_info = ServerInfo.find(params[:id])
-    @server_info.set_script
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @server_info }
     end
+  end
+
+  def trigger_script
+    EM.defer do
+      @server_info = ServerInfo.find(params[:id])
+      @server_info.set_script
+      request.env['async.callback'].call response
+    end
+  end
+
+  def console_log
+    EM.defer do
+    @server_info = ServerInfo.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+          request.env['async.callback'].call response
+
+  end
+      # throw :console_log
+
   end
 
   # GET /server_infos/new
