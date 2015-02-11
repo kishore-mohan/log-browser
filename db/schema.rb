@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204121016) do
+ActiveRecord::Schema.define(:version => 20150210150908) do
+
+  create_table "chef_mappings", :force => true do |t|
+    t.integer  "source_id"
+    t.string   "tool_name"
+    t.string   "cookbook_ref"
+    t.string   "git_url"
+    t.string   "version"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "server_infos", :force => true do |t|
     t.string   "server_name"
@@ -22,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20150204121016) do
     t.string   "configuration_management"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "sources", :force => true do |t|
+    t.string   "source_type"
+    t.string   "name"
+    t.string   "ui_view"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

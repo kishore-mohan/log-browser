@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tool_name: MyString
+  cookbook_ref: MyString
+  git_url: 
+  version: MyString
+
+two:
+  tool_name: MyString
+  cookbook_ref: MyString
+  git_url: 
+  version: MyString

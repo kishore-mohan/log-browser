@@ -4,11 +4,11 @@
     <%= simple_form_for @server_info do |f| %>
     <%= f.error_notification %>
     <%= f.input :server_name %>
-    <%= f.input :app_technology, collection: technologies, label: "Technology", prompt: "Selecet Technology"  %>
-    <%= f.input :ide, collection: ide, label: "IDE", prompt: "Selecet IDE"  %>
-    <%= f.input :scm, collection: scm, label: "SCM", prompt: "Selecet SCM"  %>
-    <%= f.input :ci_server, collection: ci_server, label: "CI Server", prompt: "Selecet CI Server"  %>
-    <%= f.input :configuration_management, collection: configuration_management, as: :check_boxes%>
+    <%= f.input :app_technology, collection: Source.get_source("Technologies"), label: "Technology", prompt: "Selecet Technology"  %>
+    <%= f.input :ide, collection: Source.get_source("IDE"), label: "IDE", prompt: "Selecet IDE"  %>
+    <%= f.input :scm, collection: Source.get_source("SCM"), label: "SCM", prompt: "Selecet SCM"  %>
+    <%= f.input :ci_server, collection: Source.get_source("CI Server"), label: "CI Server", prompt: "Selecet CI Server"  %>
+    <%= f.input :configuration_management, collection: Source.get_source("Configuration Management"), as: :check_boxes%>
     <%= f.button :submit, lable: "Create" %>
     <% end %>
 

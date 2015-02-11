@@ -1,0 +1,29 @@
+<h1>Listing chef_mappings</h1>
+
+<table class="table">
+  <tr>
+    <th>Tool name</th>
+    <th>Cookbook ref</th>
+    <th>Git url</th>
+    <th>Version</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chef_mappings.each do |chef_mapping| %>
+  <tr>
+    <td><%= chef_mapping.tool_name %></td>
+    <td><%= chef_mapping.cookbook_ref %></td>
+    <td><%= chef_mapping.git_url %></td>
+    <td><%= chef_mapping.version %></td>
+    <td><%= link_to 'Show', chef_mapping %></td>
+    <td><%= link_to 'Edit', edit_chef_mapping_path(chef_mapping) %></td>
+    <td><%= link_to 'Destroy', chef_mapping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chef mapping', new_chef_mapping_path %>

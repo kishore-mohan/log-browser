@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tool name:</b>
+  <%= @chef_mapping.tool_name %>
+</p>
+
+<p>
+  <b>Cookbook ref:</b>
+  <%= @chef_mapping.cookbook_ref %>
+</p>
+
+<p>
+  <b>Git url:</b>
+  <%= @chef_mapping.git_url %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @chef_mapping.version %>
+</p>
+
+
+<%= link_to 'Edit', edit_chef_mapping_path(@chef_mapping) %> |
+<%= link_to 'Back', chef_mappings_path %>

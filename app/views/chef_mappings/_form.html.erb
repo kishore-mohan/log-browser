@@ -1,0 +1,28 @@
+<%= simple_form_for(@chef_mapping) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :source_id, collection: source_types, :input_html => { :onchange => "update_cookbook(this.value)" }, lable: "Tool Type" %>
+   <div id="source-ref">
+       <%= f.input :tool_name, collection: @source, label: "Source Name" %>
+      </div>
+    <%= f.input :cookbook_ref %>
+    <%= f.input :git_url %>
+    <%= f.input :version %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script>
+function update_cookbook(tool_name) {  
+  jQuery.ajax({
+    url: "/update_cookbook",
+    type: "GET",
+    data: {"name" : tool_name},
+    
+  });
+}
+</script>

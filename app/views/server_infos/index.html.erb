@@ -1,8 +1,11 @@
 <h1>Listing Server Infos</h1>
 
-<table>
+<table class ="table">
   <tr>
     <th>Server Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
     
   </tr>
 
@@ -10,8 +13,8 @@
   <tr>
   <td><%= server_info.server_name %></td>
     <td><%= link_to 'Show', server_info %></td>
-    <td><%= link_to ' | Edit ', edit_server_info_path(server_info) %></td>
-    <td><%= link_to ' | Destroy', server_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit ', edit_server_info_path(server_info) %></td>
+    <td><%= link_to 'Destroy', server_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,7 +1,15 @@
 LogBrowser::Application.routes.draw do
+  resources :chef_mappings
+
+
+  resources :sources
+
+
   resources :server_infos
 
   root :to => "server_infos#index"
+
+  match "/update_cookbook" => "chef_mappings#update_cookbook"
 
   get "/console_log" => 'server_infos#console_log', as: 'console_log'
   get "/trigger_script" => 'server_infos#trigger_script', as: 'trigger_script'
